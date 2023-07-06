@@ -1,0 +1,16 @@
+DA FARE: 
+
+1. sistemare generazione infinita dei prodotti nelle varie initApp()
+
+2. funzione per iniettare contenuti nel modal:
+-cliccando si apre il modal
+-dentro il modal appaiono i dettagli del prodotto cliccato
+
+3. aggiungi al carrello: attenzione carica solo i computer anche se pigio smartphne o tablet! 
+rivedere funzione o cercarne altre più semplici
+
+4. offerta
+
+5.aggiustare footer
+
+
