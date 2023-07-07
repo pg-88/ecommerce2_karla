@@ -15,7 +15,7 @@ closeCart.addEventListener('click', ()=> {
 //array prodotti
 let products = [
     {
-        id: 1,
+        id: 178,
         name: 'COMPUTER',
         image: 'computer1.png',
         price: 500, 
@@ -27,7 +27,7 @@ let products = [
         ] 
         },
     {
-        id: 2,
+        id: 209,
         name: 'COMPUTER',
         image: 'computer2.png',
         price: 200,
@@ -39,7 +39,7 @@ let products = [
         ] 
         },
     {
-        id: 3,
+        id: 304,
         name: 'COMPUTER',
         image: 'computer3.png',
         price: 600,
@@ -51,7 +51,7 @@ let products = [
         ] 
     },
     {
-        id: 4,
+        id: 425,
         name: 'COMPUTER',
         image: 'computer4.png',
         price: 400,
@@ -63,7 +63,7 @@ let products = [
         ] 
     },
     {
-        id: 5,
+        id: 536,
         name: 'COMPUTER',
         image: 'computer5.png',
         price: 300,
@@ -76,7 +76,7 @@ let products = [
     },
 
     {
-        id: 6,
+        id: 699,
         name: 'SMARTPHONE',
         image: 'computer1.png',
         price: 500, 
@@ -88,7 +88,7 @@ let products = [
         ] 
         },
     {
-        id: 7,
+        id: 714,
         name: 'SMARTPHONE',
         image: 'computer2.png',
         price: 200,
@@ -100,7 +100,7 @@ let products = [
         ] 
         },
     {
-        id: 8,
+        id: 895,
         name: 'SMARTPHONE',
         image: 'computer3.png',
         price: 600,
@@ -112,7 +112,7 @@ let products = [
         ] 
     },
     {
-        id: 9,
+        id: 935,
         name: 'SMARTPHONE',
         image: 'computer4.png',
         price: 400,
@@ -124,7 +124,7 @@ let products = [
         ] 
     },
     {
-        id: 10,
+        id: 109,
         name: 'SMARTPHONE',
         image: 'computer5.png',
         price: 300,
@@ -136,7 +136,7 @@ let products = [
         ] 
     },
     {
-        id: 11,
+        id: 112,
         name: 'TABLET',
         image: 'computer1.png',
         price: 500, 
@@ -148,7 +148,7 @@ let products = [
         ] 
         },
     {
-        id: 12,
+        id: 125,
         name: 'TABLET',
         image: 'computer2.png',
         price: 200,
@@ -160,7 +160,7 @@ let products = [
         ] 
         },
     {
-        id: 13,
+        id: 130,
         name: 'TABLET',
         image: 'computer3.png',
         price: 600,
@@ -172,7 +172,7 @@ let products = [
         ] 
     },
     {
-        id: 14,
+        id: 148,
         name: 'TABLET',
         image: 'computer4.png',
         price: 400,
@@ -184,7 +184,7 @@ let products = [
         ] 
     },
     {
-        id: 15,
+        id: 152,
         name: 'TABLET',
         image: 'computer5.png',
         price: 300,
@@ -282,11 +282,26 @@ function initAppTablet(){
 const openModal = document.querySelector('.openModal');
 const productModal = document.querySelector('.productModal');
 const closeModal = document.querySelector('.closeModal');
+const modalContent = document.querySelector('.modal')
 
 //funzione per aprire il modal richiamata nel bottone "Dettagli prodotto" creato dentro la funzione initApp()
 function open_modal() {
     productModal.classList.add('show');
+    infoModal();
 };
+
+//funzione per inserire nel modal i dati del prodotto
+function infoModal(value){
+    let newDiv = document.createElement('li');
+    newDiv.innerHTML = `
+    <div><img src="img/${value.image}"/></div>
+    <div>${value.name}</div>
+    <div> cod:${value.id}</div>
+    <div>${value.price.toLocaleString()}€</div>
+    <div>${value.details}</div>
+    `;
+    modalContent.appendChild(newDiv);
+}
 
 //funzione per chiudere il modal richiamata nel bottone "chiudi" dentro il modal in html
 closeModal.addEventListener('click', () => {
@@ -325,13 +340,8 @@ function reloadCart(){
             newDiv.innerHTML = `
                 <div><img src="img/${value.image}"/></div>
                 <div>${value.name}</div>
+                <div> cod:${value.id}</div>
                 <div>${value.price.toLocaleString()}€</div>
-                <div>${value.quantity}</div>
-                <div>
-                    <button onclick = "changeQuantity(${key}, ${value.quantity - 1})">-</button>
-                    <div class="count">${value.quantity}</div>
-                    <button onclick = "changeQuantity(${key}, ${value.quantity + 1})">+</button>
-                </div>
             `;
             listCart.appendChild(newDiv);
         }

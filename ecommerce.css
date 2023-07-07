@@ -72,7 +72,7 @@ li a:hover {
     background-color: grey;
   }
 
-  /*stile del carrello*/
+/*stile del carrello*/
 .cart {
     position: fixed;
     top: 0;
@@ -231,23 +231,18 @@ li a:hover {
 }
 
 /*stile footer*/
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+footer { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
     right: 0;
+    z-index: 10;
     width: 1000px;
     margin: auto;
     transition: 0.5s;
-    background-color: black;
-    height: auto;
-    width: 100wh;
-    padding-top: 40px;
-    color: white;
 }
 
 .footer-content {
-    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -255,53 +250,10 @@ footer {
 }
 
 .footer-content h3 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    text-transform: capitalize;
-    line-height: 3rem;
+    display: inline-block;
 }
 
 .footer-content p {
-    max-width: 500px;
-    margin: 10px auto;
-    line-height: 28px;
-    font-size: 14px;
+    display: inline-block;
 }
-
-.social {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 3rem 0;
-}
-
-.social li {
-    margin: 0 10px;
-}
-
-social a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
-    transition: color .4s ease;
-}
-
-social a:hover {
-    color: #e8bc0e;
-}
-
-
-.footer-content span{
-    text-transform: uppercase;
-    opacity: .4;
-    font-weight: 200;
-}
-
-
-
-
-
-
-
 
